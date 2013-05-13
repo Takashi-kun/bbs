@@ -19,8 +19,8 @@ if (isset($_POST['user_name']) !== true || isset($_POST['text_body']) !== true) 
 }
 
 
-$name = $_POST['user_name'];
-$body = $_POST['text_body'];
+$name = preg_replace('/(\s|　)/','',$_POST['user_name']);
+$body = preg_replace('/(\s|　)/','',$_POST['text_body']);
 
 if (mb_strlen($name) <= 0 || mb_strlen($body) <= 0) {
     header('Location:' . URL . 'index.php?error=1');
