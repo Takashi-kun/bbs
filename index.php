@@ -1,6 +1,6 @@
 <?php
 require_once('const.php');
-
+//test commit
 if (file_exists(DAT_PATH) !== true) {
     error_log('No file exists');
     header('Location:' . URL . 'index.php');
